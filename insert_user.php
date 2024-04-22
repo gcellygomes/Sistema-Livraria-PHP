@@ -6,18 +6,14 @@ $login = $_POST ['login'];
 $setor = $_POST ['setor'];
 $senha = $_POST ['senha'];
 
+include 'conexao.php';
 
-echo "$nome";
-echo "<br>";
-echo "$login";
-echo "<br>";
-echo "$setor";
-echo "<br>";
-echo "$senha";
-echo "<br>";
+$insert = "INSERT INTO tb_user VALUES (NULL,'$nome','$login','$setor','$senha')";
 
+$query = mysqli_query($conexao, $insert);
 
-print_r($_POST);
+echo "Inserido com Sucesso";
 
 
 ?>
+
